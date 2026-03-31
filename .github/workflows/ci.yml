@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install all dependencies
+        run: npm install
+
+      - name: Test scanner with coverage
+        run: npm run coverage --workspace=scanner
+
+      - name: Test UI with coverage
+        run: npm run coverage --workspace=ui
+
+      - name: Build UI
+        run: npm run build --workspace=ui
+
+      - name: Upload scanner coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: scanner-coverage
+          path: scanner/coverage/
+
+      - name: Upload UI coverage
+        uses: actions/upload-artifact@v4
+        with:
+          name: ui-coverage
+          path: ui/coverage/

@@ -1,0 +1,67 @@
+name: Scan and Deploy
+
+on:
+  schedule:
+    - cron: '0 6 * * 1'  # Weekly, Mondays at 6am UTC
+  workflow_dispatch: {}   # Manual trigger
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install scanner dependencies
+        run: npm ci --workspace=scanner
+
+      - name: Run scanner
+        run: node scanner/index.js
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit updated skills.json
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add ui/public/data/skills.json
+          git diff --cached --quiet || git commit -m "chore: update skills.json [skip ci]"
+          git push
+
+  deploy:
+    needs: scan
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main  # Pick up the commit from the scan job
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install UI dependencies
+        run: npm ci --workspace=ui
+
+      - name: Build UI
+        run: npm run build --workspace=ui
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ui/dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

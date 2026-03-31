@@ -1,0 +1,13 @@
+{
+  "name": "skill-scout",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": ["scanner", "ui"],
+  "scripts": {
+    "scan": "node scanner/index.js",
+    "dev": "npm run dev --workspace=ui",
+    "build": "npm run build --workspace=ui",
+    "test": "npm run test --workspace=scanner && npm run test --workspace=ui",
+    "coverage": "npm run coverage --workspace=scanner && npm run coverage --workspace=ui"
+  }
+}
