@@ -1,6 +1,6 @@
 {
   "meta": {
-    "scanDate": "2026-05-11T08:53:24.260Z",
+    "scanDate": "2026-05-18T09:34:56.260Z",
     "totalSkills": 5,
     "uniqueSkills": 5,
     "totalRepos": 5,
@@ -19,7 +19,7 @@
       "installCommand": "npx skills add luofengmacheng/algorithms --skill 1 远程重启计算机 ``` echo",
       "contentHash": "c7770ebbdd903ee86546eb4cf5cf0ab2b9ae0cf9e7a511deda14f1fb955ff391",
       "lastCommitDate": "2014-07-03T06:44:43Z",
-      "scanDate": "2026-05-11T08:53:24.260Z",
+      "scanDate": "2026-05-18T09:34:56.260Z",
       "source": "search",
       "duplicateCount": 1,
       "duplicateIds": []
@@ -31,12 +31,12 @@
       "repo": "vitorpamplona/amethyst",
       "repoOwner": "vitorpamplona",
       "repoUrl": "https://github.com/vitorpamplona/amethyst",
-      "repoStars": 1520,
+      "repoStars": 1529,
       "skillPath": "SKILL.md",
       "installCommand": "npx skills add vitorpamplona/amethyst --skill Amethyst Builder Skill",
       "contentHash": "512bfaf65ee71b2c0d07296b9f1dc1c4185899683e5c86988ae0f2d48b6713e4",
       "lastCommitDate": "2026-02-07T16:17:57Z",
-      "scanDate": "2026-05-11T08:53:24.260Z",
+      "scanDate": "2026-05-18T09:34:56.260Z",
       "source": "search",
       "duplicateCount": 1,
       "duplicateIds": []
@@ -48,12 +48,12 @@
       "repo": "SharpAI/DeepCamera",
       "repoOwner": "SharpAI",
       "repoUrl": "https://github.com/SharpAI/DeepCamera",
-      "repoStars": 2737,
+      "repoStars": 2752,
       "skillPath": "SKILL.md",
       "installCommand": "npx skills add SharpAI/DeepCamera --skill depth-estimation",
       "contentHash": "bfc8ff6483d2efce61f33b936b8f6969b090a1074bff123a31d7503666048bc7",
       "lastCommitDate": "2026-03-15T16:26:39Z",
-      "scanDate": "2026-05-11T08:53:24.260Z",
+      "scanDate": "2026-05-18T09:34:56.260Z",
       "source": "search",
       "duplicateCount": 1,
       "duplicateIds": []
@@ -70,7 +70,7 @@
       "installCommand": "npx skills add d4n-sec/jdb-mcp --skill Java Debugging Skill for AI Agents (JDB-MCP)",
       "contentHash": "a1e330079c981dfe3cabff91c80ad1b80683786389ed3463ce40f99660638fab",
       "lastCommitDate": "2026-01-29T15:14:47Z",
-      "scanDate": "2026-05-11T08:53:24.260Z",
+      "scanDate": "2026-05-18T09:34:56.260Z",
       "source": "search",
       "duplicateCount": 1,
       "duplicateIds": []
@@ -87,7 +87,7 @@
       "installCommand": "npx skills add Jeffreyxdev/zola-ai --skill Zola AI — Technical Skills & Architecture",
       "contentHash": "f864edfd8892b18559651b29118636f339ef9770f2519917a0891b306b18c271",
       "lastCommitDate": "2026-03-12T18:38:39Z",
-      "scanDate": "2026-05-11T08:53:24.260Z",
+      "scanDate": "2026-05-18T09:34:56.260Z",
       "source": "search",
       "duplicateCount": 1,
       "duplicateIds": []
